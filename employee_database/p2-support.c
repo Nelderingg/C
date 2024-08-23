@@ -226,11 +226,12 @@ void search_by_LastName(dataBase_ptr db)
   for(int i = 0; i < strlen(last_name_to_search); i++)
   {
     int check = 0;
+
     for(int j = 0; j < strlen(last_name_to_search); j++)
     {
-      if(strcmp(db->emp[i].last_name[j], last_name_to_search[j]) != 0)
+      if(strcmp(&db->emp[i].last_name[j], &last_name_to_search[j]) != 0)
       {
-        check == 1;
+        check = 1;
       }
       if(check != 1)
       {
