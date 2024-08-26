@@ -6,7 +6,6 @@
 #include "p2-support.h"
 
 
-
 void create_record (char ID[], char first_name[],char last_name[], char email[], double salary, date hire_date, struct DataBase *db)// specify parameters. Clues are in the initalize function.
 {
   int new_addition = db->total + 1;
@@ -89,7 +88,7 @@ void display_helper(dataBase_ptr db, int i)
   printf("%s", " ");
 
   printf("%.12s", db->emp[i].email);
-    for(int k = strlen(db->emp[i].email); k < 12; k++)
+  for(int k = strlen(db->emp[i].email); k < 12; k++)
   {
     if(k < 12)
     {
@@ -157,7 +156,6 @@ void sort_by_ID(dataBase_ptr db)
 void sort_by_HireDate(dataBase_ptr db)
 {
   qsort(db, db->total, sizeof(int), compar);
-
 }
 
 void display_employee(dataBase_ptr db){
