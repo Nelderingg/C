@@ -32,7 +32,7 @@ void add_days_to_date(int *mm, int *dd, int *yy, int days_left_to_add) {
 
         int days_left_in_month = days_in_month[*mm] - *dd;
 
-        if (days_left_to_add > days_left_in_month) {
+        if (days_left_to_add >= days_left_in_month) {
             // Move to the next month
             days_left_to_add -= (days_left_in_month + 1);
             *dd = 1;
@@ -58,7 +58,7 @@ int main() {
   printf("enter month day and year in form mm dd yy \n");
   scanf("%d" "%d" "%d", &mm, &dd, &yy);
   printf("enter number of days to add \n");
-  scanf("%d", days_to_add);
+  scanf("%d", &days_to_add);
 
   add_days_to_date(&mm, &dd, &yy, days_to_add);
 
